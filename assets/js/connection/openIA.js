@@ -1,4 +1,4 @@
-const API_KEY = 'sk-proj-vfHKJ0PO62DuFVZ8dO7rT3BlbkFJK2fqtD1IP5YuO8g7nScT';
+const API_KEY = 'sk-proj-WRNmTXiokYyOlRfx6UDNT3BlbkFJ4vUYFLJ77U5ywUygmsPS';
 const URL = 'https://api.openai.com/v1/chat/completions'; //OpenAI API endpoint
 
 /**
