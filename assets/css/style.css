@@ -1,0 +1,322 @@
+/* ********** Custom Properties ********** */
+:root {
+    --radius: 8px;
+    --light-blue: #b3c6ff;
+    --medium-blue: #4f66aa;
+    --white: #ffffff;
+    --dark-blue: #263d80;
+    --midnight-blue: #0b1e55;
+    --navy-blue: #000d33;
+    --primary-font: "Raleway", sans-serif;
+    --secondary-font: "Poppins", sans-serif;
+}
+
+/* ********** Reset ********** */
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--white);
+    font-family: var(--primary-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+/* ********** Components ********** */
+
+ /* **** Suggestion Container **** */
+.suggestion-phase {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+    align-items: start;
+
+    .suggestion-phase_item {
+        max-width: 10rem;
+        height: 7rem;
+        padding: 1rem;
+        font-weight: 500;
+        font-size: 0.8em;
+        border: 1px solid var(--dark-blue);
+        border-radius: var(--radius);
+    }
+
+    .suggestion-phase_item:hover {
+        background-color: rgba(38, 61, 128, 0.2);
+        cursor: pointer;
+    }
+}
+
+ /* **** Chat Container **** */
+.chat-container {
+    display: none;
+    height: 67.2vh;
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    padding: 1rem;
+    overflow-x: auto;
+    overflow-wrap: break-word;
+
+    .chat-container_user,
+    .chat-container_system {
+        width: fit-content;
+        padding: 1rem;
+        font-size: 0.8em;
+        border-radius: var(--radius);
+
+        footer {
+            font-size: 0.85em;
+            margin-top: 1.5rem;
+            text-align: right;
+            font-weight: 400;
+        }
+    }
+
+    .chat-container_user {
+        align-self: self-end;
+        max-width: 70%;
+        right: 3.5%;
+        color: var(--navy-blue);
+        background-color: var(--light-blue);
+    }
+
+    .chat-container_system {
+        max-width: 85%;
+        color: var(--white);
+        background-color: var(--midnight-blue);
+        animation: fadeIn 0.5s ease-in-out forwards;
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
+    .chat-container_system div {
+        width: 100%;
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+}
+
+ /* **** Search Container **** */
+.serch-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 0 1rem;
+    position: absolute;
+    margin-bottom: 1rem;
+    bottom: 0;
+
+    label {
+        position: absolute;
+        font-size: 0.7em;
+        font-weight: 600;
+    }
+
+    input {
+        width: 100%;
+        height: 3.125rem;
+        border: 2px solid var(--navy-blue);
+        padding: 0 1rem;
+        font-weight: 500;
+        font-size: 0.8em;
+        outline: none;
+        color: var(--navy-blue);
+        font-family: var(--secondary-font);
+        border-radius: var(--radius);
+    }
+
+    input::placeholder {
+        opacity: 0.8;
+    }
+
+    button {
+        position: absolute;
+        width: auto;
+        height: auto;
+        border: none;
+        background-color: var(--white);
+        color: var(--white);
+        bottom: 0.6rem;
+        right: 2rem;
+        cursor: pointer;
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+            object-fit: cover;
+            transform: rotate(90deg);
+        }
+    }
+}
+
+@media (48rem <=width < 49.9rem) {
+     /* **** Suggestion Container **** */
+    .suggestion-phase {
+        padding: 0 25%;
+    }
+
+     /* **** Chat Container **** */
+    .chat-container {
+        padding: 1rem 3rem;
+
+        .chat-container_user {
+            max-width: 50%;
+        }
+
+        .chat-container_system {
+            max-width: 75%;
+        }
+    }
+
+    /* **** Search Container **** */
+    .serch-container {
+        padding: 0 3rem;
+
+        button {
+            right: 4rem;
+        }
+    }
+}
+
+@media (50rem <=width) {
+    body{
+        max-width: 48rem;
+        margin: auto;
+    }
+
+     /* **** Suggestion Container **** */
+    .suggestion-phase {
+        padding: 0;
+    }
+
+     /* **** Chat Container **** */
+    .chat-container {
+        padding: 1rem 0rem;
+
+        .chat-container_user {
+            max-width: 40%;
+        }
+
+        .chat-container_system {
+            max-width: 65%;
+        }
+    }
+
+    /* **** Search Container **** */
+    .serch-container {
+        padding: 0 0rem;
+
+        button {
+            right: 1rem;
+        }
+    }
+}
+
+/* ********** Utilities ********** */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ********** Site Styles ********** */
+
+/* **** FIRST HEADER **** */
+header:first-child {
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    justify-content: center;
+
+    h1 {
+        font-size: 2em;
+        margin: auto;
+        color: var(--navy-blue);
+    }
+}
+
+header:first-child.is-start {
+    min-height: 30vh;
+    align-items: end;
+
+    h1 {
+        margin: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+/* **** MAIN **** */
+main {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    color: var(--navy-blue);
+    font-family: var(--secondary-font);
+}
+
+main.is-start {
+    min-height: 60vh;
+}
+
+/* **** LAST HEADER **** */
+#last-footer {
+    display: flex;
+    width: 100%;
+    min-height: 10vh;
+    text-align: center;
+    color: var(--navy-blue);
+    font-weight: 700;
+    font-size: 1em;
+
+    span {
+        display: block;
+        margin: auto;
+        padding: 0 14%;
+    }
+}
+
+@media (48rem <=width < 49.9rem) {
+    /* **** LAST HEADER **** */
+    #last-footer {
+        span {
+            padding: 0 33%;
+        }
+    }
+}
+
+@media (50rem <=width) {
+    /* **** LAST HEADER **** */
+    #last-footer {
+        span {
+            padding: 0;
+        }
+    }
+}

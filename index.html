@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SenaIA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="is-start">
+        <h1>SenaIA</h1>
+    </header>
+
+    <main class="is-start">
+
+        <article class="suggestion-phase">
+            <section class="suggestion-phase_item">
+                <span>¿Cómo manejar el estrés?</span>
+            </section>
+
+            <section class="suggestion-phase_item">
+                <span>Técnicas para mejorar la autoestima</span>
+            </section>
+
+            <section class="suggestion-phase_item">
+                <span>¿Qué es la psicología positiva?</span>
+            </section>
+
+            <section class="suggestion-phase_item">
+                <span>Consejos para una comunicación efectiva</span>
+            </section>
+        </article>
+
+        <article class="chat-container">
+            <template id="template-user">
+                <section class="chat-container_user">
+                    <div></div>
+                    <footer data-timestamp></footer>
+                </section>
+            </template>
+
+            <template id="template-system">
+                <section class="chat-container_system">
+                    <div></div>
+                    <footer data-timestamp></footer>
+                </section>
+            </template>
+        </article>
+
+        <article class="serch-container">
+            <input type="search" name="search" placeholder="Preguntame lo que quieras ....">
+            <button id="search-sender">
+                <img src="/assets/images/navigation.png" alt="Imagen del botón">
+            </button>
+        </article>
+
+    </main>
+
+    <footer id="last-footer">
+        <span>
+            <small>SenaIA puede cometer errores. Comprueba la información importante.</small>
+        </span>
+    </footer>
+
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+
+</html>
